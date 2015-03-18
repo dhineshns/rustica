@@ -1,0 +1,74 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/Users/dhinesh/Dropbox/UB/dev/nodejs/rustica',
+5 verbose install   [ 'body-parser',
+5 verbose install     'cookie-parser',
+5 verbose install     'debug',
+5 verbose install     'express',
+5 verbose install     'hjs',
+5 verbose install     'less-middleware',
+5 verbose install     'morgan',
+5 verbose install     'serve-favicon',
+5 verbose install     'mongodb' ] ]
+6 info preinstall rustica@0.0.0
+7 verbose readDependencies using package.json deps
+8 verbose already installed skipping cookie-parser@~1.3.4 /Users/dhinesh/Dropbox/UB/dev/nodejs/rustica
+9 verbose already installed skipping debug@~2.1.1 /Users/dhinesh/Dropbox/UB/dev/nodejs/rustica
+10 verbose already installed skipping express@~4.12.2 /Users/dhinesh/Dropbox/UB/dev/nodejs/rustica
+11 verbose already installed skipping hjs@~0.0.6 /Users/dhinesh/Dropbox/UB/dev/nodejs/rustica
+12 verbose already installed skipping less-middleware@1.0.x /Users/dhinesh/Dropbox/UB/dev/nodejs/rustica
+13 verbose already installed skipping morgan@~1.5.1 /Users/dhinesh/Dropbox/UB/dev/nodejs/rustica
+14 verbose already installed skipping serve-favicon@~2.2.0 /Users/dhinesh/Dropbox/UB/dev/nodejs/rustica
+15 verbose cache add [ 'mongodb@!1.4.19', null ]
+16 verbose cache add name=undefined spec="mongodb@!1.4.19" args=["mongodb@!1.4.19",null]
+17 verbose parsed url { protocol: null,
+17 verbose parsed url   slashes: null,
+17 verbose parsed url   auth: null,
+17 verbose parsed url   host: null,
+17 verbose parsed url   port: null,
+17 verbose parsed url   hostname: null,
+17 verbose parsed url   hash: null,
+17 verbose parsed url   search: null,
+17 verbose parsed url   query: null,
+17 verbose parsed url   pathname: 'mongodb@!1.4.19',
+17 verbose parsed url   path: 'mongodb@!1.4.19',
+17 verbose parsed url   href: 'mongodb@!1.4.19' }
+18 verbose already installed skipping body-parser@~1.12.0 /Users/dhinesh/Dropbox/UB/dev/nodejs/rustica
+19 verbose cache add name="mongodb" spec="!1.4.19" args=["mongodb","!1.4.19"]
+20 verbose parsed url { protocol: null,
+20 verbose parsed url   slashes: null,
+20 verbose parsed url   auth: null,
+20 verbose parsed url   host: null,
+20 verbose parsed url   port: null,
+20 verbose parsed url   hostname: null,
+20 verbose parsed url   hash: null,
+20 verbose parsed url   search: null,
+20 verbose parsed url   query: null,
+20 verbose parsed url   pathname: '!1.4.19',
+20 verbose parsed url   path: '!1.4.19',
+20 verbose parsed url   href: '!1.4.19' }
+21 verbose addNamed [ 'mongodb', '!1.4.19' ]
+22 verbose addNamed [ null, null ]
+23 silly lockFile ba40f78a-mongodb-1-4-19 mongodb@!1.4.19
+24 verbose lock mongodb@!1.4.19 /Users/dhinesh/.npm/ba40f78a-mongodb-1-4-19.lock
+25 info addNameTag [ 'mongodb', '!1.4.19' ]
+26 verbose registry.get https://registry.npmjs.org/mongodb not expired, no request
+27 silly lockFile ba40f78a-mongodb-1-4-19 mongodb@!1.4.19
+28 silly lockFile ba40f78a-mongodb-1-4-19 mongodb@!1.4.19
+29 error notarget No compatible version found: mongodb@'!1.4.19'
+29 error notarget Valid install targets:
+29 error notarget ["0.9.4","0.9.4-4","0.9.3","0.9.1","0.9.2","0.9.6-7","0.9.6-8","0.9.6-9","0.9.6-10","0.9.6-11","0.9.6-12","0.9.6-13","0.9.6-14","0.9.6-15","0.9.6-16","0.9.6-17","0.9.6-18","0.9.6-19","0.9.6-20","0.9.6-21","0.9.6-22","0.9.6-23","0.9.7","0.9.7-0","0.9.7-1","0.9.7-1.1","0.9.7-1.2","0.9.7-1.3","0.9.7-1.4","0.9.7-2","0.9.7-2-1","0.9.7-2-2","0.9.7-2-3","0.9.7-2-4","0.9.7-2-5","0.9.7-3","0.9.7-3-1","0.9.7-3-2","0.9.7-3-3","0.9.7-3-4","0.9.7-3-5","0.9.8","0.9.8-1","0.9.8-2","0.9.8-3","0.9.8-4","0.9.8-5","0.9.8-6","0.9.8-7","0.9.9","0.9.9-1","0.9.9-2","0.9.9-3","0.9.9-4","0.9.9-5","0.9.9-6","0.9.9-7","0.9.9-8","1.0.0","1.0.1","1.0.2","1.1.0-beta","1.1.0","1.1.1","1.1.2","1.1.3","1.1.4","1.1.5","1.1.6","1.1.7","1.1.8","1.1.9","1.1.10","1.1.11","1.2.0","1.2.1","1.2.2","1.2.3","1.2.4","1.2.5","1.2.6","1.2.7","1.2.8","1.2.9","1.2.10","1.2.11","1.2.12","1.2.13","1.2.14","1.3.0","1.3.1","1.3.2","1.3.3","1.3.4","1.3.5","1.3.6","1.3.7","1.3.8","1.3.9","1.3.10","1.3.11","1.3.12","1.3.14","1.3.15","1.3.17","1.3.18","1.3.19","1.4.0-rc2","1.3.20","1.4.0-rc3","1.3.21","1.3.22","1.3.23","1.4.0-rc4","1.4.0-rc5","1.4.0-rc6","1.4.0-rc7","1.4.0-rc8","1.4.0-rc9","1.4.0-rc10","1.4.0","1.4.1","1.4.2","1.4.3","1.4.4","1.4.5","1.4.6","1.4.7","1.4.8","1.4.9","1.4.10","2.0.0-alpha1","1.4.11","1.4.12","1.4.14","1.4.15","1.4.16","1.4.17","2.0.0-alpha2","1.4.18","2.0.0","2.0.1","2.0.2","1.4.19","2.0.3","2.0.4","2.0.5","2.0.6","1.4.20","1.4.22","2.0.7","2.0.8","2.0.9","1.4.23","2.0.10","1.4.24","2.0.11","1.4.25","2.0.12","1.4.26","1.4.27","1.4.28","2.0.13","2.0.14","1.4.29","2.0.15","1.4.30","2.0.16","1.4.31","2.0.17","1.4.32","2.0.18","2.0.19","1.4.33","2.0.20","2.0.21","1.4.34","2.0.22"]
+29 error notarget
+29 error notarget This is most likely not a problem with npm itself.
+29 error notarget In most cases you or one of your dependencies are requesting
+29 error notarget a package version that doesn't exist.
+30 error System Darwin 14.1.0
+31 error command "node" "/usr/local/bin/npm" "install"
+32 error cwd /Users/dhinesh/Dropbox/UB/dev/nodejs/rustica
+33 error node -v v0.10.33
+34 error npm -v 1.4.28
+35 error code ETARGET
+36 verbose exit [ 1, true ]
