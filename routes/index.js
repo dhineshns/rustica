@@ -4,7 +4,7 @@ var mongo = require('mongodb').MongoClient;
 
 
 /* GET home page. */
-router.get('/createEvent', function(req, res, next) {
+router.post('/createEvent', function(req, res, next) {
 	inputParams = req.query;
 	var newEventName = inputParams.eventName
 	mongo.connect('mongodb://localhost:27017/rustica', function(err, db){
