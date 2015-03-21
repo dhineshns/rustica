@@ -16,7 +16,7 @@ router.post('/createEvent', function(req, res, next) {
 			collection.insert({
 				eventName : inputParams.eventName,
 				eventCreator : inputParams.eventCreator,
-				currentToken : 0,
+				currentToken : {personId : null, token : 0},
 				eventAttendees  : [],
 			}, function(err, newEvents){
 				res.send({
@@ -91,29 +91,34 @@ router.post('/nextPerson', function(req, res){
 		var events = db.collection('events');
 		events.findOne({_id:ObjectID(inputParams.eventId)}, function(err, doc){
 			console.log(doc);
-		if(doc.eventAttendees[doc.eventAttendees.length-1].token > doc.currentToken){
-			var nextAttendee;
-			for(var i =0; i< doc.eventAttendees.length; i++){
-				if(doc.currentToken == 0){
-					nextAttendee = doc.eventAttendees[0];
-					break;
+			// if there is a next person in line
+			if(doc.eventAttendees[doc.eventAttendees.length-1].token > doc.currentToken.token){
+				var nextAttendee;
+				for(var i =0; i< doc.eventAttendees.length; i++){
+					if(doc.currentToken.token == 0){
+						nextAttendee = doc.eventAttendees[0];
+						break;
+					}
+					if(doc.eventAttendees[i].token == doc.currentToken.token ){
+						nextAttendee = doc.eventAttendees[i+1];
+						break;
+					}
 				}
-				if(doc.eventAttendees[i].token == doc.currentToken ){
-					nextAttendee = doc.eventAttendees[i+1];
-					break;
-				}
+				events.update({_id:ObjectID(inputParams.eventId)}, {$set :{currentToken : nextAttendee}}, function(err, count, obj){
+					if(err){
+						console.error(err.message);
+					}else{
+						res.send({
+							nextToken : nextAttendee
+						});
+					}
+				});
+
+			}else{ // if there are no next people
+				res.send({
+					nextToken : null
+				})
 			}
-			events.update({_id:ObjectID(inputParams.eventId)}, {$set :{currentToken : nextAttendee.token}}, function(err, count, obj){
-				if(err){
-					console.error(err.message);
-				}else{
-					res.send({
-						nextToken : nextAttendee.token
-					});
-				}
-			});
-			
-		}
 		})
 
 	})
